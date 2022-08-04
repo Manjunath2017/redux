@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
-import { addOneFN } from '../Redux' //state
+import { addOneFN, subOneFN } from '../Redux' //state
 import {connect} from 'react-redux'
 
-const Addition =({number, addOneFN})=>{
+const Addition =({number, addOneFN, subOneFN})=>{
   console.log('number', number)
   return(
   <Fragment >
@@ -10,6 +10,7 @@ const Addition =({number, addOneFN})=>{
       <h1 >Addition </h1> 
       <input type='button' value='+' onClick={addOneFN} />
       <h1> {number} </h1>
+      <input type='button' value='-' onClick={subOneFN} />
     </div>
   </Fragment>
 )}
@@ -20,7 +21,10 @@ console.log(state.AddBy_One_)
 }
 
 const mapDispatchToProps=dispatch=>{
-  return{ addOneFN:()=> dispatch(addOneFN() )}
+  return{ 
+    addOneFN:()=> dispatch(addOneFN() ),
+    subOneFN:()=> dispatch(subOneFN() )
+  }
 }
 
 export default  connect(mapStateToProps,mapDispatchToProps)(Addition)

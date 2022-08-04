@@ -1,1 +1,1 @@
-export {addOneFN} from './Addition/AddiitonAction'
+export {addOneFN, subOneFN} from './Addition/AddiitonAction'
