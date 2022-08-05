@@ -2,7 +2,7 @@ import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS } from ".
 
 const initialState={
   loading:false,
-  users:[],
+  users:[{name:'Manju'}, {name:'Ron'}],
   error:''
 }
 

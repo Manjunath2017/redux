@@ -24,16 +24,17 @@ const fetchUsersFailure=error=>{
   }
 }
 
-export const fetchUsers=()=>{
+export const fetchUsersFN=()=>{
   return(dispatch)=>{
-    dispatch(fetchUsersRequest)
+    dispatch(fetchUsersRequest) // call above function .. request
     axios.get('https://jsonplaceholder.typicode.com/users')
           .then(response=>{
             const users=response.data
-            dispatch(fetchUsersSuccess(users))
+            dispatch(fetchUsersSuccess(users)) //call above function.... pass data 
           })
           .catch(error=>{
             const errorMsg=error.message
+            dispatch(fetchUsersFailure(errorMsg))
           })
   }
 }
