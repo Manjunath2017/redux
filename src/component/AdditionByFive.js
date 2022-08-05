@@ -12,7 +12,6 @@ const AdditionByFive=({number, addByFiveFN, subByFiveFN})=>{
     </div>
 )}
 
-
 const mapStateToProps=state=>{
   console.log('state', state)
   return {number:state.AddBy_Five_.numberFive}

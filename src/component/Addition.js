@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { addOneFN, subOneFN } from '../Redux' //state
+import { addOneFN, subOneFN } from '../Redux' 
 import {connect} from 'react-redux'
 import AdditionByFive from './AdditionByFive'
 
@@ -18,12 +18,12 @@ const Addition =({number, addOneFN, subOneFN})=>{
   </Fragment>
 )}
 
-const mapStateToProps=state=>{
+const mapStateToProps=state=>{ //state
 console.log(state.AddBy_One_)
   return {number:state.AddBy_One_.number}
 }
 
-const mapDispatchToProps=dispatch=>{
+const mapDispatchToProps=dispatch=>{ //update state, calling fn
   return{ 
     addOneFN:()=> dispatch(addOneFN() ),
     subOneFN:()=> dispatch(subOneFN() )
